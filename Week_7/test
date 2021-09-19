@@ -1,0 +1,53 @@
+3 3
+10 15 21
+5 13 19
+20 25 35
+
+8 1
+1 2 L
+2 4 L
+2 5 R
+1 3 R
+3 6 L
+6 8 R
+3 7 R
+7 9 R
+
+4
+4 2 3 6
+
+5 6
+1 2 3
+1 3 4
+4 2 6
+5 2 2
+2 3 5
+3 5 7
+
+void add_adjacency_list(int from,int to,int val,struct node *list[]){
+	struct node *temp=(struct node *)malloc(sizeof(struct node));
+	temp->to=to;
+	temp->val=val;
+	temp->next=NULL;
+	struct node *head=list[from];
+	if(head==NULL){
+		list[from]=temp;
+		return;
+	}
+	while(head->next!=NULL){
+		head=head->next;
+	}
+	head->next=temp;
+}
+
+void print_adjacency_list(int N,struct node *arr[]){
+	for(int i=0;i<N;i++){
+		printf("i:%d ",i);
+		struct node *temp=arr[i];
+		while(temp!=NULL){
+			printf("%d ",temp->to);
+			temp=temp->next;
+		}
+		printf("\n");
+	}
+}
