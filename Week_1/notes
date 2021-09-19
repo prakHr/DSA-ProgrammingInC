@@ -1,0 +1,5 @@
+11/1/18
+'\0' or whatever char in single qoute.
+also while scanning with %s it adds '\0' at end not '\n'.
+
+strlen without \0 it counts and strcmp in <string.h> library.
