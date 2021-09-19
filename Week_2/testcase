@@ -1,0 +1,10 @@
+9
+#include <stdio.h>
+/*Author
+* Data
+*/
+int main()
+{
+	int a;//variable
+	return 0;
+}
